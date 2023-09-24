@@ -2,6 +2,7 @@ package com.example.myroom
 
 import LoginViewModelFactory
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +13,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import com.example.myroom.database.DatabaseManager
 import com.example.myroom.database.dataclasses.User
+import com.example.myroom.database.repositories.CurrentUserRepository
 import com.example.myroom.database.repositories.UserRepository
 import com.example.myroom.viewmodels.LoginViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -28,7 +30,10 @@ class LoginActivity : AppCompatActivity() {
 
         val userDao = DatabaseManager.getDatabase(this).userDao()
         val userRepository = UserRepository(userDao)
-        viewModel = ViewModelProvider(this, LoginViewModelFactory(userRepository, this)).get(LoginViewModel::class.java)
+        val currentUserDao = DatabaseManager.getDatabase(this).currentUserDao()
+        val currentUserRepository = CurrentUserRepository(currentUserDao)
+
+        viewModel = ViewModelProvider(this, LoginViewModelFactory(userRepository, currentUserRepository, this)).get(LoginViewModel::class.java)
         viewModel.initializeData()
 
         val usernameEditText = findViewById<EditText>(R.id.username)

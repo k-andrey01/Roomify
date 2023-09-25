@@ -1,5 +1,6 @@
 package com.example.myroom
 
+import MeetingRoomAdapter
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import com.example.myroom.database.DatabaseManager
 import com.example.myroom.database.repositories.MeetingRoomRepository
 import com.example.myroom.modelfactories.ListViewModelFactory
 import com.example.myroom.viewmodels.ListViewModel
+import android.content.Intent
 
 class ListActivity : AppCompatActivity() {
     private lateinit var viewModel: ListViewModel
@@ -28,7 +30,11 @@ class ListActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.roomsList)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = MeetingRoomAdapter()
+        val adapter = MeetingRoomAdapter { room ->
+            val intent = Intent(this, RoomDetailsActivity::class.java)
+            intent.putExtra("roomId", room.id)
+            startActivity(intent)
+        }
         recyclerView.adapter = adapter
 
         viewModel.meetingRooms.observe(this, { meetingRooms ->

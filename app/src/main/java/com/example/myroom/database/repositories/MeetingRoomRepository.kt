@@ -9,6 +9,10 @@ class MeetingRoomRepository(private val meetingRoomDao: MeetingRoomDao) {
         return meetingRoomDao.getAllMeetingRooms()
     }
 
+    suspend fun getMeetingRoomById(roomId: Int): MeetingRoom?{
+        return meetingRoomDao.getMeetingRoomById(roomId)
+    }
+
     suspend fun insertMeetingRoom(room: MeetingRoom){
         if (meetingRoomDao.getMeetingRoomByName(room.roomName) == null)
             meetingRoomDao.insertMeetingRoom(room)

@@ -3,19 +3,16 @@ package com.example.myroom.viewmodels
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myroom.database.repositories.UserRepository
 import androidx.lifecycle.viewModelScope
-import com.example.myroom.ListActivity
-import com.example.myroom.database.dao.UserDao
+import com.example.myroom.activities.ListActivity
 import com.example.myroom.database.dataclasses.CurrentUser
 import com.example.myroom.database.dataclasses.User
 import com.example.myroom.database.repositories.CurrentUserRepository
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 class LoginViewModel(private val userRepository: UserRepository, private val currentUserRepository: CurrentUserRepository, private val context: Context) : ViewModel() {

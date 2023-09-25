@@ -1,3 +1,5 @@
+package com.example.myroom.helpclasses
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myroom.R
 import com.example.myroom.database.dataclasses.MeetingRoom
 
-class MeetingRoomAdapter(private val onItemClick: (MeetingRoom) -> Unit) : ListAdapter<MeetingRoom, MeetingRoomAdapter.MeetingRoomViewHolder>(MeetingRoomDiffCallback()) {
+class MeetingRoomAdapter(private val onItemClick: (MeetingRoom) -> Unit) : ListAdapter<MeetingRoom, MeetingRoomAdapter.MeetingRoomViewHolder>(
+    MeetingRoomDiffCallback()
+) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MeetingRoomViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)

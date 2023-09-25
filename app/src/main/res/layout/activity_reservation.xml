@@ -10,8 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Дата:"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"/>
+        android:textSize="18sp"/>
 
     <DatePicker
         android:id="@+id/datePicker"
@@ -27,33 +26,43 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Время начала:"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"/>
-
-        <TimePicker
-            android:id="@+id/startTimePicker"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:timePickerMode="spinner" />
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Время окончания:"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Время начала:"
+                android:textSize="18sp" />
 
-        <TimePicker
-            android:id="@+id/endTimePicker"
+            <TimePicker
+                android:id="@+id/startTimePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:timePickerMode="spinner" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:timePickerMode="spinner" />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Время окончания:"
+                android:textSize="18sp" />
+
+            <TimePicker
+                android:id="@+id/endTimePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:timePickerMode="spinner" />
+        </LinearLayout>
     </LinearLayout>
 
     <EditText
@@ -69,5 +78,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Забронировать"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:onClick="onReserveButtonClick"/>
 </LinearLayout>

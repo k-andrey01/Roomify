@@ -1,23 +1,18 @@
-package com.example.myroom
+package com.example.myroom.activities
 
 import LoginViewModelFactory
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
+import com.example.myroom.R
 import com.example.myroom.database.DatabaseManager
-import com.example.myroom.database.dataclasses.User
 import com.example.myroom.database.repositories.CurrentUserRepository
 import com.example.myroom.database.repositories.UserRepository
 import com.example.myroom.viewmodels.LoginViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.coroutineScope
 
 class LoginActivity : AppCompatActivity() {
 

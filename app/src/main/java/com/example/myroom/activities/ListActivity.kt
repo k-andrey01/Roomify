@@ -1,6 +1,6 @@
-package com.example.myroom
+package com.example.myroom.activities
 
-import MeetingRoomAdapter
+import com.example.myroom.helpclasses.MeetingRoomAdapter
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +12,7 @@ import com.example.myroom.database.repositories.MeetingRoomRepository
 import com.example.myroom.modelfactories.ListViewModelFactory
 import com.example.myroom.viewmodels.ListViewModel
 import android.content.Intent
+import com.example.myroom.R
 
 class ListActivity : AppCompatActivity() {
     private lateinit var viewModel: ListViewModel

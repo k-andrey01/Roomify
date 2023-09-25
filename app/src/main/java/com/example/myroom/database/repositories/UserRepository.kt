@@ -14,4 +14,8 @@ class UserRepository(private val userDao: UserDao) {
         if (userDao.getUserByUsername(user.username) == null)
             userDao.insertUser(user)
     }
+
+    suspend fun getUserByUsername(username: String): User?{
+        return userDao.getUserByUsername(username)
+    }
 }

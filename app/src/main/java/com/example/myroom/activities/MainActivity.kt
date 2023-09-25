@@ -1,14 +1,13 @@
-package com.example.myroom
+package com.example.myroom.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
+import com.example.myroom.R
 import com.example.myroom.database.DatabaseManager
 import com.example.myroom.database.repositories.CurrentUserRepository
-import com.example.myroom.database.repositories.UserRepository
 import com.example.myroom.modelfactories.MainViewModelFactory
-import com.example.myroom.viewmodels.LoginViewModel
 import com.example.myroom.viewmodels.MainViewModel
 
 class MainActivity : AppCompatActivity() {

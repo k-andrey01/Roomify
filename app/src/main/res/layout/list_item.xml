@@ -28,21 +28,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:text="Мест"
-            app:layout_constraintBottom_toTopOf="@id/time"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/projector"
             app:layout_constraintTop_toBottomOf="@+id/name" />
-
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:text="Время"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/whiteboard"
-            app:layout_constraintTop_toBottomOf="@+id/chairs" />
 
         <TextView
             android:id="@+id/projector"
@@ -50,8 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:text="Проектор: "
-            app:layout_constraintBottom_toTopOf="@id/whiteboard"
-            app:layout_constraintLeft_toRightOf="@id/chairs"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name" />
 
@@ -62,7 +49,6 @@
             android:layout_marginLeft="16dp"
             android:text="Доска: "
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/time"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/projector" />
 

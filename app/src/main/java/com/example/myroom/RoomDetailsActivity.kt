@@ -22,7 +22,7 @@ class RoomDetailsActivity : AppCompatActivity() {
 
         val roomId = intent.getIntExtra("roomId", -1)
 
-        viewModel = ViewModelProvider(this, RoomDetailsViewModelFactory(meetingRoomRepository, roomId)).get(RoomDetailsViewModel::class.java)
+        viewModel = ViewModelProvider(this, RoomDetailsViewModelFactory(meetingRoomRepository, roomId, this)).get(RoomDetailsViewModel::class.java)
 
         viewModel.roomInfoLiveData.observe(this, { roomInfo ->
             if (roomInfo != null) {
@@ -42,7 +42,7 @@ class RoomDetailsActivity : AppCompatActivity() {
 
         val bookButton = findViewById<Button>(R.id.bookButton)
         bookButton.setOnClickListener {
-            // Реализация бронирования временного слота
+            viewModel.bookReservation()
         }
     }
 }

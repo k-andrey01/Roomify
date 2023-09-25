@@ -1,50 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Дата:"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:layout_marginBottom="16dp"
+        android:spinnersShown="true" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <DatePicker
-            android:id="@+id/datePicker"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:calendarViewShown="false"
-            android:datePickerMode="calendar"
-            android:layout_margin="16dp"
-            android:spinnersShown="true" />
+            android:text="Время начала:"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"/>
 
         <TimePicker
             android:id="@+id/startTimePicker"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_weight="1"
             android:timePickerMode="spinner" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Время окончания:"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"/>
 
         <TimePicker
             android:id="@+id/endTimePicker"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:timePickerMode="spinner"/>
-
-        <EditText
-            android:id="@+id/eventNameEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Название мероприятия"
-            android:layout_margin="16dp" />
-
-        <Button
-            android:id="@+id/reserveButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Забронировать"
-            android:layout_gravity="center"
-            android:layout_margin="16dp" />
+            android:layout_weight="1"
+            android:timePickerMode="spinner" />
     </LinearLayout>
-</ScrollView>
+
+    <EditText
+        android:id="@+id/eventNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Название мероприятия"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/reserveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Забронировать"
+        android:layout_gravity="center" />
+</LinearLayout>

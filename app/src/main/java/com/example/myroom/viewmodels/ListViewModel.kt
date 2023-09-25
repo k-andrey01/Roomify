@@ -17,6 +17,7 @@ class ListViewModel(private val repository: MeetingRoomRepository) : ViewModel()
         viewModelScope.launch {
             repository.insertMeetingRoom(MeetingRoom(roomName = "Room 1", numberOfChairs = 10, hasProjector = true, hasWhiteboard = false, roomDescription = "Room"))
             repository.insertMeetingRoom(MeetingRoom(roomName = "Room 2", numberOfChairs = 8, hasProjector = false, hasWhiteboard = true, roomDescription = "Roomer"))
+            loadMeetingRooms()
         }
     }
 

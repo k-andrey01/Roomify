@@ -25,7 +25,6 @@ class ListActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this, ListViewModelFactory(repository)).get(ListViewModel::class.java)
         viewModel.initializeData()
-        viewModel.loadMeetingRooms()
 
         recyclerView = findViewById(R.id.roomsList)
         recyclerView.layoutManager = LinearLayoutManager(this)
